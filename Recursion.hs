@@ -32,3 +32,13 @@ fibonacci' n =
                 | n > 0  = helper (n-1) b (a+b)
                 | n < 0  = helper (n+1) b (a-b)
         in helper n 0 1
+
+-- x = c + b - 2a
+
+seqA :: Integer -> Integer
+seqA n = 
+        let helper n a b c
+                | n < 3 = n+1
+                | n == 3 = (c+b-2*a)
+                | n > 0 = helper (n-1) b c (c+b-2*a)
+        in helper n 1 2 3
